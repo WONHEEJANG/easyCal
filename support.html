@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기 앱 지원 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .contact-form {
+            margin-top: 20px;
+        }
+        .contact-form label {
+            display: block;
+            margin-top: 10px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>계산기 앱 지원 페이지</h1>
+    
+    <h2>자주 묻는 질문 (FAQ)</h2>
+    <ul>
+        <li><strong>Q: 앱을 어떻게 다운로드하나요?</strong><br>
+        A: App Store에서 "계산기 앱"을 검색하여 다운로드할 수 있습니다.</li>
+        <li><strong>Q: 앱 사용 중 문제가 발생했을 때 어떻게 해야 하나요?</strong><br>
+        A: 아래의 연락처 양식을 통해 문의해 주시면 최대한 빨리 도와드리겠습니다.</li>
+    </ul>
+
+    <h2>연락처</h2>
+    <p>이메일: 93jwh@hanmail.net</p>
+
+    <h2>지원 요청</h2>
+    <form class="contact-form" id="supportForm">
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">메시지:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">제출</button>
+    </form>
+
+    <footer>
+        <p>&copy; 2024 계산기 앱. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('supportForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            
+            var mailtoLink = 'mailto:93jwh@hanmail.net'
+                + '?subject=' + encodeURIComponent('계산기 앱 지원 요청')
+                + '&body=' + encodeURIComponent('이름: ' + name + '\n이메일: ' + email + '\n\n메시지:\n' + message);
+            
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html>
